@@ -7,6 +7,13 @@ public class Main {
   public static void main(String[] args) {
     int number = 0;
     int studentListCounter = 0;
+    final int PASS_NUMBER = 0;
+    final int ADD_STUDENT_MENU_NUMBER = 1;
+    final int DELETE_STUDENT_MENU_NUMBER = 2;
+    final int UPDATE_STUDENT_MENU_NUMBER = 3;
+    final int CALCULATE_STUDENT_MENU_NUMBER = 4;
+    final int DISPLAY_STUDENT_MENU_NUMBER = 5;
+    final int EXIT_STUDENT_MENU_NUMBER = 6;
 
     List<Student> studentList = new ArrayList<>();
     Manager manager = new Manager();
@@ -30,27 +37,27 @@ public class Main {
       }
 
       switch (number) {
-        case (0):
+        case (PASS_NUMBER):
           //1~6の整数が入力されなかった場合はメッセージを表示し選択肢を表示
           break;
-        case (1):
+        case (ADD_STUDENT_MENU_NUMBER):
           manager.addStudent(studentList, scanner);
           break;
-        case (2):
+        case (DELETE_STUDENT_MENU_NUMBER):
           //リストの増減をチェックするためのカウンターに削除前のリスト数を保存
           studentListCounter = studentList.size();
           manager.deleteStudent(studentList, scanner, studentListCounter);
           break;
-        case (3):
+        case (UPDATE_STUDENT_MENU_NUMBER):
           manager.updateScore(studentList, scanner);
           break;
-        case (4):
+        case (CALCULATE_STUDENT_MENU_NUMBER):
           manager.calculateAverage(studentList);
           break;
-        case (5):
+        case (DISPLAY_STUDENT_MENU_NUMBER):
           manager.displayAll(studentList);
           break;
-        case (6):
+        case (EXIT_STUDENT_MENU_NUMBER):
           System.out.println("終了します");
           break;
       }
